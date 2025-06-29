@@ -2,13 +2,12 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-//import QtQuick.Controls.Material 2.12
-Window {
+ApplicationWindow {
     visible: true
     width: 800
     height: 480
     title: qsTr("Hello World")
-
+    palette.highlight: "violet"
 
     Rectangle
     {
@@ -159,9 +158,6 @@ Window {
                 rowLayout.currentType = "a";
             }
 
-
-
-
  }
 
     }
@@ -209,6 +205,7 @@ Window {
     Component {
         id:a_component
         Rectangle {
+            id:a_rect
             ColumnLayout
             {
                 anchors.fill: parent
@@ -235,35 +232,82 @@ Window {
                 {
                     Rectangle
                     {
-                        height: 100
-                        width: 100
-                        color: "black"
+                        Layout.fillHeight: true
+                        Layout.fillWidth: true
+                        Layout.maximumWidth: 200
+
+
+                        Rectangle
+                        {
+                            anchors.centerIn: parent
+                            height: parent.width
+                            width: parent.width
+                            Image {
+                                anchors.fill: parent
+                                id: qrcode_border
+                                source: "qrc:/resources/icons/QRCode_border.svg"
+                            }
+
+                            Rectangle
+                            {
+                                anchors.fill: parent
+                                anchors.margins: parent.width/20
+                                color: "black"
+                            }
+                        }
                     }
                     Rectangle
                     {
+                        visible: rowLayout.currentType === "a"? true:false
                         Layout.fillHeight: true
                         Layout.fillWidth: true
                         ColumnLayout
                         {
                             anchors.fill: parent
-                            Button
+                            IconBtn
                             {
+                                id:card_btn
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
+                                Layout.preferredHeight: 40
+                                Layout.maximumWidth: 200
+                                Layout.alignment: Qt.AlignCenter
+                                imgPath: "qrc:/resources/icons/card_1.svg"
+                                btnText: "刷卡"
                                 onClicked:
                                 {
                                     console.log("btnclicked")
                                 }
                             }
-                            Button
+                            IconBtn
                             {
+                                id:vin_btn
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
+                                Layout.preferredHeight: 40
+                                Layout.maximumWidth: 200
+                                Layout.alignment: Qt.AlignCenter
+                                imgPath: "qrc:/resources/icons/car.svg"
+                                btnText: "VIN"
+                                onClicked:
+                                {
+                                    console.log("btnclicked")
+                                }
                             }
-                            Button
+                            IconBtn
                             {
+                                id:more_btn
                                 Layout.fillHeight: true
                                 Layout.fillWidth: true
+                                Layout.preferredHeight: 40
+                                Layout.maximumWidth: 200
+                                Layout.alignment: Qt.AlignCenter
+                                imgPath: "qrc:/resources/icons/more.svg"
+                                btnText: "更多"
+                                onClicked:
+                                {
+                                    console.log("btnclicked")
+                                }
                             }
                         }
                     }
@@ -276,6 +320,7 @@ Window {
 //B
     Component {
         id:b_component
+
         Rectangle {
             ColumnLayout
             {
