@@ -1,0 +1,11 @@
+import QtQuick 2.0
+
+Item {
+    property int currentIndex
+    property int index
+    property bool isSelected :currentIndex==index? true:false;
+    Rectangle
+    {
+        width: 
+    }
+}
