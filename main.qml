@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
+
 ApplicationWindow {
     visible: true
     width: 800
@@ -252,7 +253,15 @@ ApplicationWindow {
                             {
                                 anchors.fill: parent
                                 anchors.margins: parent.width/20
-                                color: "black"
+                                //color: "black"
+                                Image {
+                                    id: qrcode_img
+                                    anchors.fill: parent
+                                    //source: "file"
+
+                                    source: "image://myprovider/my_image_id"
+                                }
+
                             }
                         }
                     }
@@ -505,4 +514,6 @@ ApplicationWindow {
     function updateTime() {
         timeText.text = Qt.formatDateTime(new Date(), "yyyy-MM-dd hh:mm:ss")
     }
+
+
 }
