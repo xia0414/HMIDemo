@@ -2,11 +2,12 @@
 #include <QQmlApplicationEngine>
 #include <QtQuick/QQuickView>
 #include <QQuickStyle>
-#include <qrencode.h>
+#include "qrencode/qrencode.h"
 #include "qrcodegenerate.h"
 #include <QApplication>
 #include <QWindow>
 #include <QQmlContext>
+#include <QTimer>
 //#include <QWidgetContainer>
 int main(int argc, char *argv[])
 {
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    //QQuickStyle::setStyle("Fusion");
+    //
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -32,10 +33,9 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv);
 
-    QRCodeGenerate *qrc = new QRCodeGenerate();
-    //QWidgetContainer *container = QWidgetContainer::createWindowContainer(myWidget, qmlEngine(this));
-    //widgetWindow->setFlags(Qt::FramelessWindowHint);
-    //qmlRegisterType<QRCodeGenerate>("QRCodeGenerate", 1, 0, "QRCodeGenerate");
+    //QQuickStyle::setStyle("Material");
+
+
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
@@ -43,9 +43,19 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+     QRCodeGenerate *qrc = new QRCodeGenerate();
+     MyImageProvider* imgProvider = new MyImageProvider();
+     imgProvider->setQRCodeGenerate(qrc);
+     imgProvider->setQRString("hello_world");
+     engine.addImageProvider("myprovider",imgProvider);
+     engine.rootContext()->setContextProperty("qrc",qrc);
 
-        //engine.rootContext()->setContextProperty("qrcg",qrc);
-      engine.addImageProvider("myprovider", new MyImageProvider());
+     QTimer::singleShot(2000, [&](){
+         qDebug() << "This message appears after 1 second";
+         imgProvider->setQRString("hello_world2");
+         qrc->doimgUpdate();
+     });
+
 
 #endif
 

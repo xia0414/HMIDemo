@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>IconBtn.qml</file>
+        <file>Config.qml</file>
+        <file>qmldir</file>
+        <file>TabelRowColunm.qml</file>
+        <file>HomePage.qml</file>
     </qresource>
 </RCC>

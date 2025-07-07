@@ -53,5 +53,21 @@
         <file>resources/icons/sys_temp.svg</file>
         <file>resources/icons/sys_time.svg</file>
         <file>resources/icons/wifi_4.svg</file>
+        <file>resources/icons_dark/fee.svg</file>
+        <file>resources/icons_dark/help.svg</file>
+        <file>resources/icons_dark/info.svg</file>
+        <file>resources/icons_dark/language.svg</file>
+        <file>resources/icons_dark/loading.svg</file>
+        <file>resources/icons_dark/set.svg</file>
+        <file>resources/icons_dark/sys_charge_record.svg</file>
+        <file>resources/icons_dark/sys_com.svg</file>
+        <file>resources/icons_dark/sys_debug.svg</file>
+        <file>resources/icons_dark/sys_fault.svg</file>
+        <file>resources/icons_dark/sys_function.svg</file>
+        <file>resources/icons_dark/sys_module.svg</file>
+        <file>resources/icons_dark/sys_password.svg</file>
+        <file>resources/icons_dark/sys_temp.svg</file>
+        <file>resources/icons_dark/sys_time.svg</file>
+        <file>resources/icons_dark/wifi_4.svg</file>
     </qresource>
 </RCC>
