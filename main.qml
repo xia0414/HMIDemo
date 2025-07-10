@@ -24,4 +24,24 @@ ApplicationWindow {
     }
     }
 
+    Button
+    {
+        id:back_btn
+        width: 40
+        height: 40
+        anchors.top: parent.top;
+        anchors.right: parent.right;
+        visible: stackView.depth == 1 ? false : true
+        icon.source: "qrc:/resources/icons/cancel.svg"
+        background: Rectangle
+        {
+            color:"transparent"
+        }
+
+        onClicked:
+        {
+            stackView.pop()
+        }
+    }
+
 }

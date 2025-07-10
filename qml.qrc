@@ -6,5 +6,13 @@
         <file>qmldir</file>
         <file>TabelRowColunm.qml</file>
         <file>HomePage.qml</file>
+        <file>DataInteractPage.qml</file>
+        <file>DragLayout/ColunmDragLayout.qml</file>
+        <file>DragLayout/DragableItem.qml</file>
+        <file>DragLayout/DragArea.qml</file>
+        <file>DragLayout/GridDragLayout.qml</file>
+        <file>DragLayout/main.qml</file>
+        <file>DragLayout/DragLayoutPage.qml</file>
+        <file>ThemeBtn.qml</file>
     </qresource>
 </RCC>

@@ -41,7 +41,6 @@ Rectangle{
             anchors.left: hici_logo.right
             anchors.verticalCenter: parent.verticalCenter
             //Material.background: Material.Brown
-
             model: [1, 2, 3, 4]
             onCurrentIndexChanged:
             {
@@ -223,6 +222,13 @@ Rectangle{
                     color: Config.textColor
                     source: parent
                 }
+            MouseArea{
+                anchors.fill: parent
+                onClicked:
+                {
+                    root.laodpage("qrc:/DataInteractPage.qml")
+                }
+            }
         }
         Image
         {
@@ -257,8 +263,53 @@ Rectangle{
                 anchors.fill: parent
                 onClicked:
                 {
-                    root.laodpage()
+
                 }
+            }
+        }
+        ThemeBtn
+        {
+            id:btn_tabel
+            anchors.left: fee_btn.right
+            anchors.leftMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+            btnText: "表格"
+            textSize: 15
+            height: 30
+            width: 80
+            onClicked:
+            {
+                root.laodpage("qrc:/TabelRowColunm.qml")
+            }
+        }
+       ThemeBtn
+        {
+            id:btn_data
+            anchors.left: btn_tabel.right
+            anchors.leftMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+            btnText: "数据"
+            textSize: 15
+            height: 30
+            width: 80
+            onClicked:
+            {
+                root.laodpage("qrc:/DataInteractPage.qml")
+            }
+        }
+        ThemeBtn
+        {
+            id:btn_layout
+            anchors.left: btn_data.right
+            anchors.leftMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+            btnText: "布局"
+            textSize: 15
+            height: 30
+            width: 80
+            onClicked:
+            {
+                root.laodpage("qrc:/DragLayout/DragLayoutPage.qml")
             }
         }
     }
@@ -406,7 +457,6 @@ Rectangle{
 //B
     Component {
         id:b_component
-
 
         Rectangle {
             color: Config.cardColor
@@ -608,9 +658,9 @@ Rectangle{
     function updateTime() {
         timeText.text = Qt.formatDateTime(new Date(), "yyyy-MM-dd hh:mm:ss")
     }
-    function laodpage()
+    function laodpage(page)
     {
-        parent.loadPage("qrc:/TabelRowColunm.qml")
+        parent.loadPage(page)
     }
 
     onScaleChanged:

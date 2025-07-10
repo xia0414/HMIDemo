@@ -5,6 +5,7 @@ Button
     id: customButton
     property var imgPath
     property var btnText
+    property bool isscale: true
     clip: true
     background: Rectangle {
         radius: 10
@@ -24,10 +25,10 @@ Button
         Text {
             text: btnText
             color: Config.textColor
-            anchors.left:img_1.right
+            x:img_1.width+(parent.width-img_1.width)/2-(width/2)
             anchors.leftMargin: 20
             anchors.verticalCenter: parent.verticalCenter
-            font.pixelSize: 20*Config.fontScale
+            font.pixelSize: isscale? 20*Config.fontScale:height-2
         }
 
         Behavior on color {

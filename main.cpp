@@ -8,6 +8,8 @@
 #include <QWindow>
 #include <QQmlContext>
 #include <QTimer>
+#include "datamanager.h"
+#include "xmlhandler.h"
 //#include <QWidgetContainer>
 int main(int argc, char *argv[])
 {
@@ -49,6 +51,12 @@ int main(int argc, char *argv[])
      imgProvider->setQRString("hello_world");
      engine.addImageProvider("myprovider",imgProvider);
      engine.rootContext()->setContextProperty("qrc",qrc);
+     DataManager m;
+     m.setCur(10.0);
+     m.setVol(5.0);
+     engine.rootContext()->setContextProperty("dataManager",&m);
+     XMLHandler xmlh;
+     engine.rootContext()->setContextProperty("xmlHandle",&xmlh);
 
      QTimer::singleShot(2000, [&](){
          qDebug() << "This message appears after 1 second";

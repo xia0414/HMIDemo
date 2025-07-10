@@ -128,16 +128,16 @@ MouseArea
         }
     }
 }
-Button
-{
-    anchors.right: parent.right
-    anchors.bottom: parent.bottom
-    text: "back"
-    onClicked:
-    {
-        parent.parent.pop()
-    }
-}
+//Button
+//{
+//    anchors.right: parent.right
+//    anchors.bottom: parent.bottom
+//    text: "back"
+//    onClicked:
+//    {
+//        parent.parent.pop()
+//    }
+//}
 Text {
     id: textMeasurer
     visible: false

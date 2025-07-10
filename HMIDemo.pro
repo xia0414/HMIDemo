@@ -1,5 +1,5 @@
 QT += quick quickcontrols2 \
-    widgets
+    widgets xml
 
 CONFIG += c++11
 
@@ -16,6 +16,7 @@ DEFINES += HAVE_CONFIG_H
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+        datamanager.cpp \
         main.cpp \
         qrcodegenerate.cpp \
         qrencode/bitstream.c \
@@ -27,7 +28,8 @@ SOURCES += \
         qrencode/qrinput.c \
         qrencode/qrspec.c \
         qrencode/rsecc.c \
-        qrencode/split.c
+        qrencode/split.c \
+        xmlhandler.cpp
 
 RESOURCES += qml.qrc \
     res.qrc
@@ -47,6 +49,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    datamanager.h \
     qrcodegenerate.h \
     qrencode/bitstream.h \
     qrencode/config.h \
@@ -58,4 +61,5 @@ HEADERS += \
     qrencode/qrinput.h \
     qrencode/qrspec.h \
     qrencode/rsecc.h \
-    qrencode/split.h
+    qrencode/split.h \
+    xmlhandler.h
