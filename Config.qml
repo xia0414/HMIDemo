@@ -5,7 +5,6 @@ Item {
     id:theme
     property bool  isLightTheme:theme.state === "lightTheme"? true:false
     property real fontScale:1
-
     property color backgroundColor: "#DFDFDF"
     property color titleBarColor:"#ECECEC"
     property color cardColor:"#FFFFFF"
@@ -13,8 +12,6 @@ Item {
     property color borderColor: "#D4D4D4"
     property color btnColor:"#F2F2F2"
     property color btnPressedColor:"#E3E3E3"
-
-
     property var themeState: theme.state
 
     function setBlackTheme()

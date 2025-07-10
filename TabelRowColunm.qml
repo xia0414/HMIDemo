@@ -107,7 +107,6 @@ MouseArea
         }
         console.log(colunm_1.x)
     }
-
 }
 
 MouseArea
