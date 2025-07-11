@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.12
+import "../"
 Rectangle {
     id: draggableItem
     property var id
@@ -26,6 +27,11 @@ Rectangle {
         anchors.centerIn: parent
         text: id
         font.pixelSize: 30
+    }
+
+    FluShadow
+    {
+
     }
 
 }

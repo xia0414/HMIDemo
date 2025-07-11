@@ -3,6 +3,7 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.0
+import IconTypes 1.0
 //import QtQuick.Controls.Material 2.12
 import "qrc:/"
 ApplicationWindow {
@@ -32,16 +33,24 @@ ApplicationWindow {
         anchors.top: parent.top;
         anchors.right: parent.right;
         visible: stackView.depth == 1 ? false : true
-        icon.source: "qrc:/resources/icons/cancel.svg"
         background: Rectangle
         {
             color:"transparent"
+            MyIcon
+            {
+                anchors.fill: parent
+                anchors.margins: 5
+                iconSource: IconTypes.Back
+            }
         }
-
         onClicked:
         {
             stackView.pop()
         }
+    }
+    Component.onCompleted:
+    {
+        //console.log(IconTypes.Blue)
     }
 
 }

@@ -10,6 +10,7 @@
 #include <QTimer>
 #include "datamanager.h"
 #include "xmlhandler.h"
+#include "IconTypes.h"
 //#include <QWidgetContainer>
 int main(int argc, char *argv[])
 {
@@ -57,6 +58,10 @@ int main(int argc, char *argv[])
      engine.rootContext()->setContextProperty("dataManager",&m);
      XMLHandler xmlh;
      engine.rootContext()->setContextProperty("xmlHandle",&xmlh);
+     qmlRegisterUncreatableType<IconTypes>(
+            "IconTypes", 1, 0, "IconTypes",
+            "Cannot instantiate IconTypes"
+        );
 
      QTimer::singleShot(2000, [&](){
          qDebug() << "This message appears after 1 second";

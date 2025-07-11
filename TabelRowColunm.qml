@@ -51,7 +51,6 @@ Rectangle
                             height: rowHeight
                             border.color: "black"
                             border.width: 1
-
                             Text {
                                 id:text_2
                                 anchors.centerIn: parent

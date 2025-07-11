@@ -11,8 +11,11 @@
         <file>DragLayout/DragableItem.qml</file>
         <file>DragLayout/DragArea.qml</file>
         <file>DragLayout/GridDragLayout.qml</file>
-        <file>DragLayout/main.qml</file>
         <file>DragLayout/DragLayoutPage.qml</file>
         <file>ThemeBtn.qml</file>
+        <file>FluShadow.qml</file>
+        <file>MyIcon.qml</file>
+        <file>MyProgressRing.qml</file>
+        <file>ItemShowPage.qml</file>
     </qresource>
 </RCC>

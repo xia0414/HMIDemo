@@ -4,6 +4,7 @@ import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.0
+import IconTypes 1.0
 Rectangle{
     id:root
     visible: true
@@ -98,6 +99,16 @@ Rectangle{
             }
 
         }
+        MyIcon
+        {
+            anchors.left: theme_swith.right
+            anchors.verticalCenter: parent.verticalCenter
+            iconSize: 30
+
+            iconSource: IconTypes.Phone
+
+        }
+
         Text {
             id: timeText
             anchors.right: parent.right
@@ -128,6 +139,10 @@ Rectangle{
                     color: Config.textColor
                     source: parent
                 }
+        }
+        FluShadow
+        {
+
         }
 
     }
@@ -190,7 +205,13 @@ Rectangle{
                                easing.type: Easing.OutCubic  // 动画曲线
                            }
                     }
+
+                    FluShadow
+                    {
+                        //anchors.fill: parent
+                    }
                 }
+
             }
             Component.onCompleted:
             {
@@ -311,6 +332,29 @@ Rectangle{
             {
                 root.laodpage("qrc:/DragLayout/DragLayoutPage.qml")
             }
+        }
+
+        MyIcon
+        {
+            id:item_show_page
+            iconSize: 35
+            anchors.left: btn_layout.right
+            anchors.leftMargin: 10
+            anchors.verticalCenter: parent.verticalCenter
+            iconSource: IconTypes.OEM
+            MouseArea
+            {
+                anchors.fill: parent
+                onClicked:
+                {
+                    root.laodpage("qrc:/ItemShowPage.qml")
+                }
+            }
+        }
+
+        FluShadow
+        {
+
         }
     }
 //A
@@ -662,7 +706,6 @@ Rectangle{
     {
         parent.loadPage(page)
     }
-
     onScaleChanged:
     {
         Config.fontScale = root.scale

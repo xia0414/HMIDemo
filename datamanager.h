@@ -9,6 +9,7 @@ class DataManager : public QObject
     Q_OBJECT
     Q_PROPERTY(double vol READ vol WRITE setVol NOTIFY volChanged)
     Q_PROPERTY(double cur READ cur WRITE setCur NOTIFY curChanged)
+    //Q_PROPERTY_AUTO()
 public:
     explicit DataManager(QObject *parent = nullptr);
     double vol() const;
@@ -30,8 +31,6 @@ private:
 signals:
     void volChanged();
     void curChanged();
-
-
 };
 
 #endif // DATAMANAGER_H

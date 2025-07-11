@@ -49,6 +49,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    Def.h \
+    IconTypes.h \
     datamanager.h \
     qrcodegenerate.h \
     qrencode/bitstream.h \

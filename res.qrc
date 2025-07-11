@@ -69,5 +69,6 @@
         <file>resources/icons_dark/sys_temp.svg</file>
         <file>resources/icons_dark/sys_time.svg</file>
         <file>resources/icons_dark/wifi_4.svg</file>
+        <file>resources/font/FluentIcons.ttf</file>
     </qresource>
 </RCC>
